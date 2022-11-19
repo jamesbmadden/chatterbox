@@ -90,7 +90,7 @@ export default class Spotify {
 
     window.onSpotifyWebPlaybackSDKReady = () => {
       this.spotifyPlayer = new window.Spotify.Player({
-        name: 'Codejam 12',
+        name: 'Chatterbox',
         getOAuthToken: cb => { cb(this.accessToken); },
         volume: 0.5
       });
