@@ -148,7 +148,7 @@ export default class Spotify {
    * Gets the player to play the inputted track
    * @param {*} uri the uri of the thing to play
    */
-  async play(uri) {
+  async playTrack(uri) {
 
     const headers = this.genAuthHeaders();
 
