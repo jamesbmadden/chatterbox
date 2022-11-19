@@ -13,7 +13,7 @@ function Signin({ getLoginHref }) {
               
           </header>
 
-          <h2>podcast picker app</h2>
+          <h2>chatterbox</h2>
 
           <p>Sign into Spotify</p>
         
