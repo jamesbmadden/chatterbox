@@ -50,9 +50,13 @@ export default class Spotify {
     const result = await fetch('https://api.spotify.com/v1/me', { headers });
     const userJson = await result.json();
 
+    // check whether the user has a profile picture or not. If no, use the default
+    let image = this.userData.image;
+    if (userJson.images) image = userJson.images[0].url;
+
     this.userData = {
       name: userJson.displayName,
-      image: this.userData.image
+      image
     }
 
   }
