@@ -1,7 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 
+import Spotify from './Logic/spotify';
 import SpeechRecog from './SpeechRecognition';
+
+const spotify = new Spotify();
 
 function App() {
   return (
