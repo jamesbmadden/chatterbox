@@ -5,6 +5,20 @@ export default class Spotify {
 
   loggedIn = false;
 
+  // properties for us to play with
+  accessToken = '';
+
+  constructor () {
+
+    // read the current url. If there's an access token from spotify, we're in! Otherwise, we'll need a login.
+    if (window.location.hash && window.location.hash.includes('access_token')) {
+      this.loggedIn = true;
+      // grab the access token from the hash
+      this.accessToken = window.location.hash.split('=')[1].split('&')[0];
+    } else this.loggedIn = false;
+
+  }
+
   login() {
   
     // send the user to the spotify page
