@@ -10,6 +10,10 @@
   overscroll-behavior: contain;
   scroll-snap-align: start;
   z-index: -1;
+
+  /* give it fixed positon */
+  position: sticky;
+  top: 0;
 }
 
 /* Provides scrolling between home and player */
