@@ -50,6 +50,10 @@ export default function SpeechRecog({ spotify }) {
       if (event.results[resultIndex].isFinal) resultIndex++;
     }
 
+    return () => {
+      recognition.stop();
+    }
+
   }, []);
 
   return <></>;
