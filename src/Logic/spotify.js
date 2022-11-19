@@ -6,12 +6,14 @@ export default class Spotify {
   loggedIn = false;
 
   login() {
-    
-    // a request to spotify api must be made
-    fetch('', {
-      method: 'GET',
+  
+    // send the user to the spotify page
+    const link = document.createElement('a');
+    link.href = `https://accounts.spotify.com/authorize?response_type=token&client_id=${Spotify.clientID}&redirect_uri=http%3A%2F%2Flocalhost%3A3000`;
 
-    })
+    document.body.appendChild(link);
+    link.click();
+    // page is now unloaded because we're on spotify's domain now
 
   }
 
