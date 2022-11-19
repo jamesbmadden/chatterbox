@@ -1,3 +1,5 @@
+import React, { useRef, useEffect } from 'react';
+
 import './Home.css';
 import '../Logic/spotify.js';
 
@@ -14,8 +16,27 @@ import SpeechRecog from '../SpeechRecognition';
 import MediaPlayer from '../Components/MediaPlayer';
 
 function Home({ spotify }) {
+
+  // keep track of the scroll position of home wrapper for the opacity effect on the mini player controls
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+
+    wrapperRef.current.addEventListener('scroll', event => {
+
+      // final scroll position would be innerHeight - 80px
+      const totalScroll = window.innerHeight - 80;
+
+      const scrollPercent = event.target.scrollTop / totalScroll;
+
+      // set the opacity of the mini player and homepage to the opposite of scroll percent
+      event.target.querySelector('.mediaplayer header').style.opacity = 1 - scrollPercent;
+    }, { passive: true });
+
+  }, []);
+
   return (
-    <div className='Home-wrapper'>
+    <div className='Home-wrapper' ref={wrapperRef}>
       <div className="Home">
           <header className="Home-header">
 
