@@ -124,6 +124,17 @@ export default class Spotify {
         this.deviceID = null;
       });
 
+      this.spotifyPlayer.addListener('player_state_changed', ({
+        position,
+        duration,
+        track_window: { current_track }
+      }) => {
+        
+        // there's been an update! show it!
+        this.getNowPlayingInfo();
+
+      });
+
       this.spotifyPlayer.connect();
     };
 
@@ -133,16 +144,17 @@ export default class Spotify {
    * Gets the player to play the inputted track
    * @param {*} uri the uri of the thing to play
    */
-  play(uri) {
+  async play(uri) {
 
     const headers = this.genAuthHeaders();
 
     // send spotify what to play
-    fetch(`https://api.spotify.com/v1/me/player/play?device_id=${this.deviceID}`, {
+    await fetch(`https://api.spotify.com/v1/me/player/play?device_id=${this.deviceID}`, {
       method: 'PUT',
       headers,
       body: JSON.stringify({ uris: [uri] })
-    })
+    });
+    
 
   }
 
