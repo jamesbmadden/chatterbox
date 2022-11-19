@@ -217,4 +217,22 @@ export default class Spotify {
     this.updateApp();
   }
 
+  play() {
+
+    this.isPaused = false;
+    this.spotifyPlayer.resume();
+
+    this.updateApp();
+
+  }
+
+  pause() {
+
+    this.isPaused = true;
+    this.spotifyPlayer.pause();
+
+    this.updateApp();
+
+  }
+
 }
