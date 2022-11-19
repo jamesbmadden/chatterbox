@@ -1,5 +1,6 @@
 .Signin {
     text-align: center;
+    padding: 200px 0;
     color: white;
 }
 
@@ -9,6 +10,16 @@
     text-align: center;
     border: none;
     text-decoration: none;
-    border-radius: 4px;
-    padding: 4px;
+    border-radius: 20px;
+    padding: 10px 50px;
+    font-size: 20px;
+}
+
+.title {
+    padding: 50px;
+    font-size: 50px;
+}
+
+.signin-text {
+    font-size: 20px;
 }
