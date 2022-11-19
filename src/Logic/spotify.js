@@ -21,6 +21,8 @@ export default class Spotify {
   nowPlaying = {};
   // and the spotify player instance
   spotifyPlayer;
+  // and the ID for the app
+  deviceID;
 
   constructor () {
 
@@ -59,13 +61,24 @@ export default class Spotify {
   }
 
   /**
-   * loads info about the user 
+   * Creates an instance of headers ready to go with the access token
    */
-  async getUserData() {
+  genAuthHeaders () {
 
     // create and set the authorization headers
     const headers = new Headers();
     headers.set('Authorization', `Bearer ${this.accessToken}`);
+
+    return headers;
+
+  }
+
+  /**
+   * loads info about the user 
+   */
+  async getUserData() {
+
+    const headers = this.genAuthHeaders();
     
     const result = await fetch('https://api.spotify.com/v1/me', { headers });
     const userJson = await result.json();
@@ -95,8 +108,35 @@ export default class Spotify {
         volume: 0.5
       });
 
+      // Ready
+      this.spotifyPlayer.addListener('ready', ({ device_id }) => {
+        this.deviceID = device_id;
+      });
+
+      // Not Ready
+      this.spotifyPlayer.addListener('not_ready', ({ device_id }) => {
+        this.deviceID = null;
+      });
+
       this.spotifyPlayer.connect();
     };
+
+  }
+
+  /**
+   * Gets the player to play the inputted track
+   * @param {*} uri the uri of the thing to play
+   */
+  play(uri) {
+
+    const headers = this.genAuthHeaders();
+
+    // send spotify what to play
+    fetch(`https://api.spotify.com/v1/me/player/play?device_id=${this.deviceID}`, {
+      method: 'PUT',
+      headers,
+      body: JSON.stringify({ uris: [uri] })
+    })
 
   }
 
