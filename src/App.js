@@ -10,7 +10,7 @@ import SpeechRecog from './SpeechRecognition';
 const spotify = new Spotify();
 
 function App() {
-  if (spotify.loggedIn) return <Home></Home>;
+  if (spotify.loggedIn) return <Home userData={spotify.userData}></Home>;
   else return <Signin getLoginHref={() => spotify.getLoginHref()}></Signin>;
 }
 

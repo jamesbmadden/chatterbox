@@ -8,6 +8,12 @@ export default class Spotify {
   // properties for us to play with
   accessToken = '';
 
+  // user data once signed in
+  userData = {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Square_gray.svg/1200px-Square_gray.svg.png',
+    name: 'James Madden'
+  };
+
   constructor () {
 
     // read the current url. If there's an access token from spotify, we're in! Otherwise, we'll need a login.
