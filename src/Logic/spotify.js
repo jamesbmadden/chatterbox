@@ -8,10 +8,13 @@ export default class Spotify {
   // properties for us to play with
   accessToken = '';
 
+  // trigger a refresh in the app component
+  updateApp = () => {};
+
   // user data once signed in
   userData = {
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Square_gray.svg/1200px-Square_gray.svg.png',
-    name: 'James Madden'
+    name: 'loading'
   };
 
   constructor () {
@@ -55,9 +58,11 @@ export default class Spotify {
     if (userJson.images) image = userJson.images[0].url;
 
     this.userData = {
-      name: userJson.displayName,
+      name: userJson['display_name'],
       image
-    }
+    };
+
+    this.updateApp();
 
   }
 
