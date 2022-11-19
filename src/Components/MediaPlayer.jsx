@@ -5,6 +5,8 @@ export default function MediaPlayer ({ spotify }) {
 
   return (
     <div className="mediaplayer">
+      {/* this img is the blurred background of the media player */}
+      <img class="mediaplayer-bg" src={spotify.nowPlaying.image}></img>
       {/* Header is the portion that can be seen at all times. */}
       <header>
         <p>Img and podcast info here</p>

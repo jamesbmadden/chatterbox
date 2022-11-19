@@ -18,7 +18,11 @@ export default class Spotify {
   };
 
   // keep track of what's currently being played
-  nowPlaying = {};
+  nowPlaying = {
+    artist: 'loading',
+    title: 'loading',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Square_gray.svg/1200px-Square_gray.svg.png'
+  };
   // and the spotify player instance
   spotifyPlayer;
   // and the ID for the app

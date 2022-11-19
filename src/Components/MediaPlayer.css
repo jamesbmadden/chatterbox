@@ -1,8 +1,22 @@
 .mediaplayer {
+  position: relative;
   height: 100vh;
   margin-top: -80px;
   scroll-snap-align: start;
-  background: #222;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+
+  overflow: hidden;
+}
+
+.mediaplayer-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transform: translate(-50%);
+  height: 100vh;
+
+  filter: blur(32px);
+  z-index: -1;
 }
