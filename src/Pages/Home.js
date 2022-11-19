@@ -1,8 +1,9 @@
 import './Home.css';
+import '../Logic/spotify.js';
 
 import SpeechRecog from '../SpeechRecognition';
 
-function Home() {
+function Home({ userData }) {
   return (
       <div className="Home">
           <header className="Home-header">
@@ -11,7 +12,10 @@ function Home() {
               
           </header>
           
-        <h2>Hello, spotify username</h2>
+          <img src={ userData.image}/>
+
+          <h2>Hello, { userData.name }</h2>
+          
 
         <p>What would you like to listen to?</p>
           

@@ -2,3 +2,8 @@
     color: white;
     text-align: center;
 }
+
+.profile-photo {
+    width: 20px;
+    height: 20px;
+}
