@@ -8,9 +8,6 @@ export default class Spotify {
   // properties for us to play with
   accessToken = '';
 
-  // function provided by App to trigger refresh
-  updateApp = () => {};
-
   // user data once signed in
   userData = {
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Square_gray.svg/1200px-Square_gray.svg.png',
@@ -54,11 +51,9 @@ export default class Spotify {
     const userJson = await result.json();
 
     this.userData = {
-      ...this.userData,
-      name: userJson.displayName
+      name: userJson.displayName,
+      image: this.userData.image
     }
-
-    this.updateApp();
 
   }
 

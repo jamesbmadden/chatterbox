@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 import logo from './logo.svg';
 import './App.css';
 
@@ -12,12 +10,6 @@ import SpeechRecog from './SpeechRecognition';
 const spotify = new Spotify();
 
 function App() {
-
-  const [ update, setUpdate ] = useState(0);
-
-  spotify.updateApp = () => {
-    setUpdate(update + 1);
-  }
 
   if (spotify.loggedIn) return <Home userData={spotify.userData}></Home>;
   else return <Signin getLoginHref={() => spotify.getLoginHref()}></Signin>;
