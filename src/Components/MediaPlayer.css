@@ -9,15 +9,17 @@
   overflow: hidden;
 
   color: white;
+
+  z-index: 1;
 }
 
 .mediaplayer-bg {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   height: 100%;
-  transform: translate(-50%);
-  height: 100vh;
+  transform: translate(-50%, -50%);
+  height: 150vh;
 
   filter: blur(64px) brightness(0.5);
   z-index: -1;
