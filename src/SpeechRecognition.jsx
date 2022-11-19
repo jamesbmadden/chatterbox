@@ -28,10 +28,10 @@ export default function SpeechRecog() {
 
     recognition.continuous = true;
 
-    document.body.onclick = () => {
-      recognition.start();
-      console.log('Ready to receive a color command.');
-    }
+    //document.body.onclick = () => {
+    //  recognition.start();
+    //  console.log('Ready to receive a color command.');
+    //}
 
     let resultIndex = 0;
 
