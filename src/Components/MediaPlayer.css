@@ -7,6 +7,8 @@
   border-top-right-radius: 16px;
 
   overflow: hidden;
+
+  color: white;
 }
 
 .mediaplayer-bg {
@@ -19,4 +21,37 @@
 
   filter: blur(64px) brightness(0.5);
   z-index: -1;
+}
+
+.mediaplayer header {
+  position: relative;
+  height: 80px;
+  box-sizing: border-box;
+  padding: 8px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mediaplayer-header--img {
+  height: 100%;
+  border-radius: 8px;
+}
+
+.mediaplayer-header--about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 8px;
+}
+
+.mediaplayer-header--about h1 {
+  font-size: 16px;
+  margin: 2px;
+}
+.mediaplayer-header--about h2 {
+  font-size: 12px;
+  opacity: 0.5;
+  margin: 2px;
 }
