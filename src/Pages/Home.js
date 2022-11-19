@@ -5,7 +5,7 @@ import SpeechRecog from '../SpeechRecognition';
 
 import MediaPlayer from '../Components/MediaPlayer';
 
-function Home({ spotify, update }) {
+function Home({ spotify }) {
   return (
     <div className='Home-wrapper'>
       <div className="Home">
@@ -31,7 +31,7 @@ function Home({ spotify, update }) {
           
 
         </div>
-      <MediaPlayer spotify={spotify} update={update}></MediaPlayer>
+      <MediaPlayer spotify={spotify}></MediaPlayer>
     </div>
   );
 }
