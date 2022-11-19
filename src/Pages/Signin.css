@@ -15,11 +15,11 @@
     font-size: 20px;
 }
 
-h2 {
+.title {
     padding: 50px;
     font-size: 50px;
 }
 
-p {
+.signin-text {
     font-size: 20px;
 }

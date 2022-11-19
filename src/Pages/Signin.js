@@ -13,9 +13,9 @@ function Signin({ getLoginHref }) {
               
           </header>
 
-          <h2>chatterbox</h2>
+          <h2 className="title">chatterbox</h2>
 
-          <p>Sign into Spotify</p>
+          <p className="signin-text">Sign into Spotify</p>
         
           <a className="button" href={getLoginHref()}>SIGN IN</a>
           
