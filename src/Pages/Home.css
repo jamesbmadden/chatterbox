@@ -10,6 +10,8 @@
   overscroll-behavior: contain;
   scroll-snap-align: start;
   z-index: -1;
+  box-sizing: border-box;
+  padding-bottom:80px;
 }
 
 /* Provides scrolling between home and player */
