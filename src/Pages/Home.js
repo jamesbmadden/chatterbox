@@ -31,7 +31,7 @@ function Home({ spotify }) {
           
 
         </div>
-      <MediaPlayer></MediaPlayer>
+      <MediaPlayer spotify={spotify}></MediaPlayer>
     </div>
   );
 }
