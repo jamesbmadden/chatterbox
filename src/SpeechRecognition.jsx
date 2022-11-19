@@ -26,15 +26,21 @@ export default function SpeechRecog() {
     recognition.grammars = grammarList;
     const bg = document.querySelector('html');
 
+    recognition.continuous = true;
+
     document.body.onclick = () => {
       recognition.start();
       console.log('Ready to receive a color command.');
     }
 
+    let resultIndex = 0;
+
     recognition.onresult = (event) => {
-      const color = event.results[0][0].transcript.replace('.', '');
+      const color = event.results[resultIndex][0].transcript.replace('.', '');
+      console.log('result!');
       setWords(`Result received: ${color}`);
       bg.style.backgroundColor = color;
+      resultIndex++;
     }
 
   }, []);
