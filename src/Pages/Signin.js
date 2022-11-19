@@ -1,5 +1,5 @@
-import '../App.css';
 
+import './Signin.css';
 
 import SpeechRecog from '../SpeechRecognition';
 
@@ -11,6 +11,10 @@ function Signin() {
               <SpeechRecog></SpeechRecog>
               
           </header>
+
+          <h2>podcast picker app</h2>
+
+          <p>Sign into Spotify</p>
         
           <a className="button" href="">Sign In</a>
           
