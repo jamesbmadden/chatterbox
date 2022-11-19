@@ -12,7 +12,10 @@ function Home({ userData }) {
               
           </header>
           
-          <img src={ userData.image}/>
+        <div className="user-info">
+            <img className="profile-photo" src={userData.image} />
+            <p>{userData.name}</p>
+        </div>
 
           <h2>Hello, { userData.name }</h2>
           
