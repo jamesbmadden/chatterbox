@@ -11,8 +11,6 @@ import ComedyCover2 from '../Assets/PodcastExamples/officeladiespodcast.jpeg';
 import TrueCrimeCover1 from '../Assets/PodcastExamples/datelinepodcast.webp';
 import TrueCrimeCover2 from '../Assets/PodcastExamples/crimejunkiepodcast.jpeg';
 
-import SpeechRecog from '../SpeechRecognition';
-
 import MediaPlayer from '../Components/MediaPlayer';
 
 function Home({ spotify }) {
@@ -40,8 +38,6 @@ function Home({ spotify }) {
     <div className='Home-wrapper' ref={wrapperRef}>
       <div className="Home">
           <header className="Home-header">
-
-              <SpeechRecog></SpeechRecog>
               
           </header>
           

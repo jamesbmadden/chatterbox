@@ -3,10 +3,16 @@ import './MediaPlayer.css';
 import PlayIcon from '../Assets/Icons/play.svg';
 import PauseIcon from '../Assets/Icons/pause.svg';
 
+import SpeechRecog from '../SpeechRecognition';
+
 export default function MediaPlayer ({ spotify }) {
 
   return (
     <div className="mediaplayer">
+
+      {/* Provide the speech recognition services for playing, pausing etc */}
+      <SpeechRecog spotify={spotify}></SpeechRecog>
+
       {/* this img is the blurred background of the media player */}
       <img className="mediaplayer-bg" src={spotify.nowPlaying.image}></img>
       {/* Header is the portion that can be seen at all times. */}
