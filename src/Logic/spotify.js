@@ -19,8 +19,8 @@ export default class Spotify {
 
   // keep track of what's currently being played
   nowPlaying = {
-    artist: 'loading',
-    title: 'loading',
+    artist: '',
+    title: '',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Square_gray.svg/1200px-Square_gray.svg.png'
   };
   // and the spotify player instance
@@ -37,6 +37,8 @@ export default class Spotify {
       this.accessToken = window.location.hash.split('=')[1].split('&')[0];
       // now we can load the current user's data
       this.getUserData();
+      // and get the current track
+      this.getNowPlayingInfo();
       // and initialize the spotify sdk
       this.initSpotifySdk();
     } else this.loggedIn = false;
@@ -49,7 +51,7 @@ export default class Spotify {
    */
   getLoginHref() {
   
-    const scope = encodeURIComponent('user-read-private user-read-email streaming');
+    const scope = encodeURIComponent('user-read-private user-read-email user-read-playback-state streaming');
     // send the user to the spotify page
     return `https://accounts.spotify.com/authorize?response_type=token&client_id=${Spotify.clientID}&scope=${scope}&redirect_uri=http%3A%2F%2Flocalhost%3A3000`;
 
@@ -141,6 +143,50 @@ export default class Spotify {
       headers,
       body: JSON.stringify({ uris: [uri] })
     })
+
+  }
+
+  /**
+   * Gets the info of the current track and records it to the nowPlaying property
+   */
+  async getNowPlayingInfo() {
+
+    const headers = this.genAuthHeaders();
+
+    // load the data from spotify
+    const response = await fetch('https://api.spotify.com/v1/me/player/currently-playing?additional_types=episode', { headers });
+    let trackJson = {};
+
+    try {
+      trackJson = await response.json();
+
+      console.log(trackJson);
+
+      // set the now playing, whether its a podcast or a track
+      if (trackJson.currently_playing_type == 'track') {
+        this.nowPlaying = {
+          image: trackJson.item.album.images[0].url,
+          title: trackJson.item.name,
+          artist: trackJson.item.artists[0].name
+        }
+      } else if (trackJson.currently_playing_type == 'episode') {
+        this.nowPlaying = {
+          image: trackJson.item.images[0].url,
+          title: trackJson.item.name,
+          artist: trackJson.item.show.name
+        }
+      }
+
+      this.updateApp();
+
+    } catch (error) {
+      // there's nothing playing. return to default now playing info
+      this.nowPlaying = {
+        artist: '',
+        title: '',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Square_gray.svg/1200px-Square_gray.svg.png'
+      }
+    }
 
   }
 

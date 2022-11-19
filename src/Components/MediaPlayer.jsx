@@ -1,7 +1,6 @@
-import React, { useState } from "react";
 import './MediaPlayer.css';
 
-export default function MediaPlayer ({ spotify, update }) {
+export default function MediaPlayer ({ spotify }) {
 
   return (
     <div className="mediaplayer">
