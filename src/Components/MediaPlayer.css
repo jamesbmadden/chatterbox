@@ -55,3 +55,8 @@
   opacity: 0.5;
   margin: 2px;
 }
+
+.mediaplayer-header--controls {
+  position: absolute;
+  right: 8px;
+}

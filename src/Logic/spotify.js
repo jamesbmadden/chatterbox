@@ -17,6 +17,9 @@ export default class Spotify {
     name: 'loading'
   };
 
+  // whether or not the current output is paused
+  isPaused = true;
+
   // keep track of what's currently being played
   nowPlaying = {
     artist: '',
@@ -136,6 +139,7 @@ export default class Spotify {
       });
 
       this.spotifyPlayer.connect();
+      this.spotifyPlayer.pause();
     };
 
   }
@@ -154,6 +158,8 @@ export default class Spotify {
       headers,
       body: JSON.stringify({ uris: [uri] })
     });
+
+    this.isPaused = false;
     
 
   }
@@ -200,6 +206,15 @@ export default class Spotify {
       }
     }
 
+  }
+
+  togglePlayback () {
+    console.log('toggling playback')
+
+    this.isPaused = !this.isPaused;
+    this.spotifyPlayer.togglePlay();
+
+    this.updateApp();
   }
 
 }
