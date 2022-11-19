@@ -8,8 +8,6 @@ function Signin({ getLoginHref }) {
   return (
       <div className="Signin">
           <header className="Signin-header">
-
-              <SpeechRecog></SpeechRecog>
               
           </header>
 
