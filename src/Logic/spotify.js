@@ -8,6 +8,9 @@ export default class Spotify {
   // properties for us to play with
   accessToken = '';
 
+  // function provided by App to trigger refresh
+  updateApp = () => {};
+
   // user data once signed in
   userData = {
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Square_gray.svg/1200px-Square_gray.svg.png',
@@ -21,6 +24,8 @@ export default class Spotify {
       this.loggedIn = true;
       // grab the access token from the hash
       this.accessToken = window.location.hash.split('=')[1].split('&')[0];
+      // now we can load the current user's data
+      this.getUserData();
     } else this.loggedIn = false;
 
   }
@@ -33,6 +38,27 @@ export default class Spotify {
   
     // send the user to the spotify page
     return `https://accounts.spotify.com/authorize?response_type=token&client_id=${Spotify.clientID}&redirect_uri=http%3A%2F%2Flocalhost%3A3000`;
+
+  }
+
+  /**
+   * loads info about the user 
+   */
+  async getUserData() {
+
+    // create and set the authorization headers
+    const headers = new Headers();
+    headers.set('Authorization', `Bearer ${this.accessToken}`);
+    
+    const result = await fetch('https://api.spotify.com/v1/me', { headers });
+    const userJson = await result.json();
+
+    this.userData = {
+      ...this.userData,
+      name: userJson.displayName
+    }
+
+    this.updateApp();
 
   }
 
