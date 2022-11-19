@@ -31,6 +31,8 @@ function Home({ spotify }) {
           
 
         </div>
+      {/* Provides spacing for the media player's scrolling */}
+      <div className="Home-wrapper--filler"></div>
       <MediaPlayer></MediaPlayer>
     </div>
   );

@@ -14,8 +14,15 @@
 
 /* Provides scrolling between home and player */
 .Home-wrapper {
-
   scroll-snap-type: y mandatory;
+}
+
+.Home-wrapper--filler {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 128px);
+  scroll-snap-align: start;
+  pointer-events: none;
 }
 
 .user-info {
