@@ -17,6 +17,11 @@ export default class Spotify {
     name: 'loading'
   };
 
+  // keep track of what's currently being played
+  nowPlaying = {};
+  // and the spotify player instance
+  spotifyPlayer;
+
   constructor () {
 
     // read the current url. If there's an access token from spotify, we're in! Otherwise, we'll need a login.
@@ -26,6 +31,8 @@ export default class Spotify {
       this.accessToken = window.location.hash.split('=')[1].split('&')[0];
       // now we can load the current user's data
       this.getUserData();
+      // and initialize the spotify sdk
+      this.initSpotifySdk();
     } else this.loggedIn = false;
 
   }
@@ -36,8 +43,9 @@ export default class Spotify {
    */
   getLoginHref() {
   
+    const scope = encodeURIComponent('user-read-private user-read-email streaming');
     // send the user to the spotify page
-    return `https://accounts.spotify.com/authorize?response_type=token&client_id=${Spotify.clientID}&redirect_uri=http%3A%2F%2Flocalhost%3A3000`;
+    return `https://accounts.spotify.com/authorize?response_type=token&client_id=${Spotify.clientID}&scope=${scope}&redirect_uri=http%3A%2F%2Flocalhost%3A3000`;
 
   }
 
@@ -72,6 +80,23 @@ export default class Spotify {
     };
 
     this.updateApp();
+
+  }
+
+  /**
+   * sets up the spotify web playback sdk with the current user's token
+   */
+  initSpotifySdk() {
+
+    window.onSpotifyWebPlaybackSDKReady = () => {
+      this.spotifyPlayer = new window.Spotify.Player({
+        name: 'Codejam 12',
+        getOAuthToken: cb => { cb(this.accessToken); },
+        volume: 0.5
+      });
+
+      this.spotifyPlayer.connect();
+    };
 
   }
 
