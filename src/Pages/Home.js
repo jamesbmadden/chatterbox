@@ -5,9 +5,9 @@ import '../Logic/spotify.js';
 import NewsCover1 from '../Assets/PodcastExamples/the-daily-album-art-superJumbo-v2.jpeg';
 import NewsCover2 from '../Assets/PodcastExamples/podcast-template-front-burner-2022.webp';
 import ComedyCover1 from '../Assets/PodcastExamples/Smartless-1024x1024.jpeg';
-import ComedyCover2 from '../Assets/PodcastExamples/ab6765630000ba8a0e451d2e3cd95e758580d7cc.jpeg';
-import TrueCrimeCover1 from '../Assets/PodcastExamples/aHR0cHM6Ly9pbWFnZS5zaW1wbGVjYXN0Y2RuLmNvbS9pbWFnZXMvYWUxODNmZTItYzYzNC00NThhLTkzZGQtNTc3MGYwNjc2Zjc3L2IwMTA4MDlhLWMzMTEtNDI1Yy05MzI1LTIyMzVjMjFlNjkzOS8zMDAweDMwMDAvN2YwNDIxZjczZDJjZTBjYTI3MmUzOTJjOTM3ZTFhMzAxMjg1ZDQ0ZmU3YzZkNzEwYzI4NDRkODB.webp';
-import TrueCrimeCover2 from '../Assets/PodcastExamples/ab6765630000ba8a2e9ceef055f8c77769f8fa8f.jpeg';
+import ComedyCover2 from '../Assets/PodcastExamples/officeladiespodcast.jpeg';
+import TrueCrimeCover1 from '../Assets/PodcastExamples/datelinepodcast.webp';
+import TrueCrimeCover2 from '../Assets/PodcastExamples/crimejunkiepodcast.jpeg';
 
 import SpeechRecog from '../SpeechRecognition';
 
