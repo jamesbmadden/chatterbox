@@ -16,7 +16,7 @@ function Home({ spotify }) {
           </header>
           
         <div className="user-info">
-            <img className="profile-photo" src={spotify.userData.image} />
+            <img className="profile-photo" src={spotify.userData.image}/>
             <p>{spotify.userData.name}</p>
         </div>
 
