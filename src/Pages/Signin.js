@@ -3,7 +3,8 @@ import './Signin.css';
 
 import SpeechRecog from '../SpeechRecognition';
 
-function Signin() {
+// takes in a function to trigger the login
+function Signin({ getLoginHref }) {
   return (
       <div className="Signin">
           <header className="Signin-header">
@@ -16,7 +17,7 @@ function Signin() {
 
           <p>Sign into Spotify</p>
         
-          <a className="button" href="">Sign In</a>
+          <a className="button" href={getLoginHref()}>Sign In</a>
           
 
         </div>

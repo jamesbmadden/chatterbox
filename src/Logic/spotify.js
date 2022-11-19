@@ -19,15 +19,14 @@ export default class Spotify {
 
   }
 
-  login() {
+  /**
+   * Generates the url to trigger the sign in flow on spotify
+   * @returns the url
+   */
+  getLoginHref() {
   
     // send the user to the spotify page
-    const link = document.createElement('a');
-    link.href = `https://accounts.spotify.com/authorize?response_type=token&client_id=${Spotify.clientID}&redirect_uri=http%3A%2F%2Flocalhost%3A3000`;
-
-    document.body.appendChild(link);
-    link.click();
-    // page is now unloaded because we're on spotify's domain now
+    return `https://accounts.spotify.com/authorize?response_type=token&client_id=${Spotify.clientID}&redirect_uri=http%3A%2F%2Flocalhost%3A3000`;
 
   }
 

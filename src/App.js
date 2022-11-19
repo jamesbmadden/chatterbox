@@ -11,7 +11,7 @@ const spotify = new Spotify();
 
 function App() {
   if (spotify.loggedIn) return <Home></Home>;
-  else return <Signin></Signin>;
+  else return <Signin getLoginHref={() => spotify.getLoginHref()}></Signin>;
 }
 
 export default App;
