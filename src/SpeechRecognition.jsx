@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-export default function SpeechRecog() {
+// list of words to be recognized by the speech detector
+const grammar = '#JSGF V1.0; grammar commands; public <command> = chatterbox | play | pause | next | skip;'
+
+export default function SpeechRecog({ spotify }) {
 
   const [ words, setWords ] = useState("");
 
@@ -21,30 +24,48 @@ export default function SpeechRecog() {
     else alert("no speech recognition support :(");
 
     // set the words to be recognized
-    const grammar = '#JSGF V1.0; grammar colors; public <color> = aqua | azure | beige | bisque | black | blue | brown | chocolate | coral | crimson | cyan | fuchsia | ghostwhite | gold | goldenrod | gray | green | indigo | ivory | khaki | lavender | lime | linen | magenta | maroon | moccasin | navy | olive | orange | orchid | peru | pink | plum | purple | red | salmon | sienna | silver | snow | tan | teal | thistle | tomato | turquoise | violet | white | yellow ;'
+    
     grammarList.addFromString(grammar, 1);
     recognition.grammars = grammarList;
-    const bg = document.querySelector('html');
 
     recognition.continuous = true;
+    recognition.interimResults = true;
 
-    //document.body.onclick = () => {
-    //  recognition.start();
-    //  console.log('Ready to receive a color command.');
-    //}
+    recognition.start();
+    console.log('Ready to receive a color command.');
 
     let resultIndex = 0;
 
     recognition.onresult = (event) => {
-      const color = event.results[resultIndex][0].transcript.replace('.', '');
-      console.log('result!');
-      setWords(`Result received: ${color}`);
-      bg.style.backgroundColor = color;
-      resultIndex++;
+      const command = event.results[resultIndex][0].transcript.replace('.', '');
+
+
+      if (command.toLowerCase().includes('chatterbox')) {
+        // pause the playback!
+        spotify.pause();
+        runCommand(command.toLowerCase(), spotify);
+
+      }
+
+      if (event.results[resultIndex].isFinal) resultIndex++;
     }
 
   }, []);
 
-  return <p>{words}</p>;
+  return <></>;
+
+}
+
+function runCommand(command, spotify) {
+
+  console.log("COMMAND: " + command)
+
+
+  if (command.includes("chatterbox pause")) {
+    spotify.pause()
+  }
+  if (command.includes("chatterbox play")) {
+    spotify.play()
+  }
 
 }
