@@ -26,6 +26,8 @@ function Home({ spotify }) {
         <p>What would you like to listen to?</p>
 
         <button onClick={() => {spotify.signOut()}}>Log Out</button>
+
+        <p style={{ marginBottom: '400vh'}}>This gives padding so scroll behaviour is demoed properly</p>
           
 
         </div>

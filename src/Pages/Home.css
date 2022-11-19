@@ -9,7 +9,6 @@
   height: 100%;
   overflow-y: auto;
   overscroll-behavior: contain;
-  scroll-snap-align: center;
   z-index: -1;
 }
 
