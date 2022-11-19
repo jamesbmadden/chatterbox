@@ -42,6 +42,15 @@ export default class Spotify {
   }
 
   /**
+   * Sign the current user out.
+   */
+  signOut () {
+    this.loggedIn = false;
+    window.location.hash = '';
+    this.updateApp();
+  }
+
+  /**
    * loads info about the user 
    */
   async getUserData() {

@@ -5,7 +5,7 @@ import SpeechRecog from '../SpeechRecognition';
 
 import MediaPlayer from '../Components/MediaPlayer';
 
-function Home({ userData }) {
+function Home({ spotify }) {
   return (
     <div className='Home-wrapper'>
       <div className="Home">
@@ -16,14 +16,16 @@ function Home({ userData }) {
           </header>
           
         <div className="user-info">
-            <img className="profile-photo" src={userData.image} />
-            <p>{userData.name}</p>
+            <img className="profile-photo" src={spotify.userData.image} />
+            <p>{spotify.userData.name}</p>
         </div>
 
-          <h2>Hello, { userData.name }</h2>
+          <h2>Hello, { spotify.userData.name }</h2>
           
 
         <p>What would you like to listen to?</p>
+
+        <button onClick={() => {spotify.signOut()}}>Log Out</button>
           
 
         </div>
