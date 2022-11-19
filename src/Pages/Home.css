@@ -24,11 +24,16 @@
 
 .user-info {
   text-align: right;
+    margin: 0;
+
+   
+ 
 }
 
 .profile-photo {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   float:right;
   padding: 0px 20px;
+  border-radius: 50%;
 }
