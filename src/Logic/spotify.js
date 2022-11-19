@@ -24,7 +24,8 @@ export default class Spotify {
   nowPlaying = {
     artist: '',
     title: '',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Square_gray.svg/1200px-Square_gray.svg.png'
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Square_gray.svg/1200px-Square_gray.svg.png',
+    playable: false
   };
   // and the spotify player instance
   spotifyPlayer;
@@ -40,8 +41,6 @@ export default class Spotify {
       this.accessToken = window.location.hash.split('=')[1].split('&')[0];
       // now we can load the current user's data
       this.getUserData();
-      // and get the current track
-      this.getNowPlayingInfo();
       // and initialize the spotify sdk
       this.initSpotifySdk();
     } else this.loggedIn = false;
@@ -149,6 +148,8 @@ export default class Spotify {
    * @param {*} uri the uri of the thing to play
    */
   async playTrack(uri) {
+
+    this.spotifyPlayer.activateElement();
 
     const headers = this.genAuthHeaders();
 
