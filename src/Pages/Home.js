@@ -1,4 +1,4 @@
-import '../App.css';
+import './Home.css';
 
 import SpeechRecog from '../SpeechRecognition';
 
@@ -10,6 +10,10 @@ function Home() {
               <SpeechRecog></SpeechRecog>
               
           </header>
+          
+        <h2>Hello, spotify username</h2>
+
+        <p>What would you like to listen to?</p>
           
 
         </div>
