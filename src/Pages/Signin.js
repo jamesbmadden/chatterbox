@@ -17,6 +17,7 @@ function Signin({ getLoginHref }) {
         
           <a className="button" href={getLoginHref()}>SIGN IN</a>
           
+          <p className='signin-wales'>Made with ♥ by The Whales</p>
 
         </div>
   );
