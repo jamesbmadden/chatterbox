@@ -1,6 +1,14 @@
-.button {
-    background-color: black;
+.Signin {
+    text-align: center;
     color: white;
+}
+
+.button {
+    background-color: white;
+    color: black;
     text-align: center;
     border: none;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 4px;
 }
