@@ -33,3 +33,9 @@
   padding: 0px 20px;
   border-radius: 50%;
 }
+
+.podcast-cover {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+}
