@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 
+<<<<<<< Updated upstream
 import Spotify from './Logic/spotify';
+=======
+import Signin from './Pages/Signin.js';
+import Home from './Pages/Home.js';
+
+>>>>>>> Stashed changes
 import SpeechRecog from './SpeechRecognition';
 
 const spotify = new Spotify();
