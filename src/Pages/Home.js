@@ -51,6 +51,7 @@ function Home({ spotify }) {
 
         <p>What would you like to listen to?</p>
 
+              <button onClick={() => spotify.playTrack('spotify:track:6SRsiMl7w1USE4mFqrOhHC')}>Play</button>
               <button onClick={() => { spotify.signOut() }}>Log Out</button>
 
               <h3>Genres</h3>
