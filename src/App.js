@@ -19,7 +19,7 @@ function App() {
     setUpdate(update + 1);
   }
 
-  if (spotify.loggedIn) return <Home spotify={spotify} update={update}></Home>;
+  if (spotify.loggedIn) return <Home spotify={spotify}></Home>;
   else return <Signin getLoginHref={() => spotify.getLoginHref()}></Signin>;
 }
 
