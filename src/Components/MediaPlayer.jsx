@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import './MediaPlayer.css';
 
-export default function MediaPlayer ({ spotify }) {
+export default function MediaPlayer ({ spotify, update }) {
 
   return (
     <div className="mediaplayer">
       {/* this img is the blurred background of the media player */}
-      <img class="mediaplayer-bg" src={spotify.nowPlaying.image}></img>
+      <img className="mediaplayer-bg" src={spotify.nowPlaying.image}></img>
       {/* Header is the portion that can be seen at all times. */}
       <header>
         <p>Img and podcast info here</p>
