@@ -1,6 +1,6 @@
 .mediaplayer {
   height: 100vh;
-  margin-top: calc(100vh - 128px);
+  margin-top: calc(100vh - 64px);
   scroll-snap-align: center;
   background: red;
 }
