@@ -17,7 +17,7 @@ function Signin({ getLoginHref }) {
 
           <p>Sign into Spotify</p>
         
-          <a className="button" href={getLoginHref()}>Sign In</a>
+          <a className="button" href={getLoginHref()}>SIGN IN</a>
           
 
         </div>
