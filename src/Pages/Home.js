@@ -31,6 +31,7 @@ function Home({ spotify }) {
 
       // set the opacity of the mini player and homepage to the opposite of scroll percent
       event.target.querySelector('.mediaplayer header').style.opacity = 1 - scrollPercent;
+      event.target.querySelector('.mediaplayer-large').style.opacity = scrollPercent;
     }, { passive: true });
 
   }, []);
