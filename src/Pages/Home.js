@@ -3,8 +3,11 @@ import '../Logic/spotify.js';
 
 import SpeechRecog from '../SpeechRecognition';
 
+import MediaPlayer from '../Components/MediaPlayer';
+
 function Home({ userData }) {
   return (
+    <div className='Home-wrapper'>
       <div className="Home">
           <header className="Home-header">
 
@@ -24,6 +27,8 @@ function Home({ userData }) {
           
 
         </div>
+      <MediaPlayer></MediaPlayer>
+    </div>
   );
 }
 
