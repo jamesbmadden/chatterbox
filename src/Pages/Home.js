@@ -59,7 +59,7 @@ function Home({ spotify }) {
 
         <div className='genre-grid'>
           <GenreCard genre="Health" image={HealthCover} onClick={() => spotify.search('health')} colour="rgb(0, 111, 154)" transparent="rgba(0, 111, 154, 0.2)"></GenreCard>
-          <GenreCard genre="Wellness" image={WellnessCover} onClick={() => spotify.search('health')} colour="rgb(244, 186, 24)" transparent="rgba(244, 186, 24, 0.2)"></GenreCard>
+          <GenreCard genre="Wellness" image={WellnessCover} onClick={() => spotify.search('wellness')} colour="rgb(244, 186, 24)" transparent="rgba(244, 186, 24, 0.2)"></GenreCard>
           <GenreCard genre="True Crime" image={TrueCrimeCover} onClick={() => spotify.search('true crime')} colour="rgb(15, 34, 43)" transparent="rgba(15, 34, 43, 0.2)"></GenreCard>
           <GenreCard genre="News" image={NewsCover} onClick={() => spotify.search('news')} colour="rgb(120, 175, 100)" transparent="rgba(120, 175, 100, 0.2)"></GenreCard>
           <GenreCard genre="Comedy" image={ComedyCover} onClick={() => spotify.search('comedy')} colour="rgb(241, 21, 47)" transparent="rgba(241, 21, 47, 0.2)"></GenreCard>
