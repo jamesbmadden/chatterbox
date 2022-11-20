@@ -110,38 +110,43 @@ export default class Spotify {
    */
   initSpotifySdk() {
 
-    window.onSpotifyWebPlaybackSDKReady = () => {
-      this.spotifyPlayer = new window.Spotify.Player({
-        name: 'Chatterbox',
-        getOAuthToken: cb => { cb(this.accessToken); },
-        volume: 0.5
-      });
+    window.onSpotifyWebPlaybackSDKReady = () => this.createSpotifyDevice();
 
-      // Ready
-      this.spotifyPlayer.addListener('ready', ({ device_id }) => {
-        this.deviceID = device_id;
-      });
+  }
 
-      // Not Ready
-      this.spotifyPlayer.addListener('not_ready', ({ device_id }) => {
-        this.deviceID = null;
-      });
+  /**
+   * Creates an instance of a spotify device
+   */
+  async createSpotifyDevice () {
+    this.spotifyPlayer = new window.Spotify.Player({
+      name: 'Chatterbox',
+      getOAuthToken: cb => { cb(this.accessToken); },
+      volume: 0.5
+    });
 
-      this.spotifyPlayer.addListener('player_state_changed', ({
-        position,
-        duration,
-        track_window: { current_track }
-      }) => {
-        
-        // there's been an update! show it!
-        this.getNowPlayingInfo();
+    // Ready
+    this.spotifyPlayer.addListener('ready', ({ device_id }) => {
+      this.deviceID = device_id;
+    });
 
-      });
+    // Not Ready
+    this.spotifyPlayer.addListener('not_ready', ({ device_id }) => {
+      this.deviceID = null;
+    });
 
-      this.spotifyPlayer.connect();
-      this.spotifyPlayer.pause();
-    };
+    this.spotifyPlayer.addListener('player_state_changed', ({
+      position,
+      duration,
+      track_window: { current_track }
+    }) => {
+      
+      // there's been an update! show it!
+      this.getNowPlayingInfo();
 
+    });
+
+    await this.spotifyPlayer.connect();
+    this.spotifyPlayer.pause();
   }
 
   /**
@@ -149,8 +154,6 @@ export default class Spotify {
    * @param {*} uri the uri of the thing to play
    */
   async playTrack(uri) {
-
-    this.spotifyPlayer.activateElement();
 
     const headers = this.genAuthHeaders();
 
@@ -242,6 +245,8 @@ export default class Spotify {
    */
   async search (query) {
 
+    this.spotifyPlayer.activateElement();
+
     const headers = this.genAuthHeaders();
 
     const response = await fetch(`https://api.spotify.com/v1/search?type=episode&q=${encodeURIComponent(query)}&limit=50`, { headers });
@@ -250,10 +255,7 @@ export default class Spotify {
 
     console.log(results);
 
-    // play one!
-    const podcast = results.episodes.items[Math.floor(Math.random() * 50)];
-
-    this.playTrack(podcast.uri);
+    this.generateQueue(results.episodes.items);
 
   }
 
@@ -261,7 +263,38 @@ export default class Spotify {
    * use the results of a search to generate a queue
    */
   async generateQueue (episodes) {
-    
+
+    const orderedEpisodes = [];
+
+    // loop through every episode 
+    while (episodes.length > 0) {
+
+      // pick which index to grab
+      const i = Math.floor(Math.random() * episodes.length);
+
+      // put it in the new array!
+      orderedEpisodes.push(episodes[i]);
+
+      // remove it from the original
+      episodes.splice(i);
+
+    }
+
+    // play the first one
+    console.log(orderedEpisodes[0].uri);
+    this.playTrack(orderedEpisodes.shift().uri);
+
+    let i = 0;
+    const loop = setInterval(async () => {
+      const headers = this.genAuthHeaders();
+      await fetch(`https://api.spotify.com/v1/me/player/queue?uri=${encodeURIComponent(orderedEpisodes[i].uri)}`, { headers, method: 'POST' });
+
+      i++;
+      if (i == orderedEpisodes.length) clearInterval(loop);
+    }, 1000);
+
+
+
   }
 
 }
