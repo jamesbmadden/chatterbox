@@ -40,14 +40,19 @@ export default function SpeechRecog({ spotify }) {
 
     let endForGood = false;
 
+    let alreadyGotResults = new Set();
+
     recognition.onresult = (event) => {
       const command = event.results[resultIndex][0].transcript.replace('.', '');
 
 
-      if (command.toLowerCase().includes('chatterbox')) {
+      if (command.toLowerCase().includes('chatterbox') && !alreadyGotResults.has(resultIndex)) {
         // pause the playback!
         //spotify.pause();
-        runCommand(command.toLowerCase(), spotify);
+        // if this is true, clear the command so it doesn't get run multiple times
+        if (runCommand(command.toLowerCase(), spotify)) {
+          alreadyGotResults.add(resultIndex);
+        }
 
       }
 
@@ -58,6 +63,7 @@ export default function SpeechRecog({ spotify }) {
       if (!endForGood) {
         recognition.start();
         resultIndex = 0;
+        alreadyGotResults = new Set();
       }
     }
 
@@ -79,9 +85,19 @@ function runCommand(command, spotify) {
 
   if (command.includes("chatterbox pause")) {
     spotify.pause()
+    return true;
   }
   if (command.includes("chatterbox play")) {
     spotify.play()
+    return true;
+  }
+  if (command.includes("chatterbox skip") || command.includes("chatterbox next")) {
+    spotify.nextTrack();
+    return true;
+  }
+  if (command.includes("chatterbox back") || command.includes("chatterbox previous")) {
+    spotify.prevTrack();
+    return true;
   }
 
 }
