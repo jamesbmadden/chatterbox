@@ -297,15 +297,19 @@ export default class Spotify {
 
   nextTrack () {
 
-    this.queueIndex++;
-    this.playTrack(this.queue[this.queueIndex].uri);
+    if (this.queueIndex < this.queue.length) {
+      this.queueIndex++;
+      this.playTrack(this.queue[this.queueIndex].uri);
+    }
 
   }
 
   prevTrack () {
     
-    this.queueIndex--;
-    this.playTrack(this.queue[this.queueIndex].uri);
+    if (this.queueIndex > 0) {
+      this.queueIndex--;
+      this.playTrack(this.queue[this.queueIndex].uri);
+    }
 
   }
 
