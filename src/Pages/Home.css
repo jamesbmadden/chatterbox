@@ -32,9 +32,14 @@
 .profile-photo {
   width: 30px;
   height: 30px;
-  float:right;
   padding: 0px 20px;
   border-radius: 50%;
+}
+
+.exit-button {
+  width: 30px;
+  height: 30px;
+  padding-right: 20px;
 }
 
 .podcast-cover {

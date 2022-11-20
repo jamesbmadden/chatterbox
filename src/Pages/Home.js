@@ -3,6 +3,8 @@ import React, { useRef, useEffect } from 'react';
 import './Home.css';
 import '../Logic/spotify.js';
 
+import ExitIcon from '../Assets/Icons/exit.svg';
+
 /** podcast cover imports */
 import NewsCover from '../Assets/PodcastExamples/the-daily-album-art-superJumbo-v2.jpeg';
 import ComedyCover from '../Assets/PodcastExamples/Smartless-1024x1024.jpeg';
@@ -46,6 +48,7 @@ function Home({ spotify }) {
       <div className="Home">
           
         <div className="user-info">
+            <img onClick={() => { spotify.signOut() }} className='exit-button' src={ExitIcon} alt="Sign Out"></img>
             <img className="profile-photo" src={spotify.userData.image} alt="User's profile photo"/>
             <p>{spotify.userData.name}</p>
         </div>
@@ -54,8 +57,6 @@ function Home({ spotify }) {
           
 
         <p>What would you like to listen to?</p>
-
-        <button onClick={() => { spotify.signOut() }}>Log Out</button>
 
         <h3>Genres</h3>
 
