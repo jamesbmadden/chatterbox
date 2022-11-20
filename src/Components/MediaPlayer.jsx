@@ -34,7 +34,6 @@ export default function MediaPlayer ({ spotify }) {
       <div className='mediaplayer-large--controls'>
         <img className='mediaplayer-large--playpause' onClick={() => spotify.togglePlayback() } src={spotify.isPaused ? PlayIcon : PauseIcon}></img>
       </div>
-      { /* <button onClick={() => spotify.play('spotify:track:6SRsiMl7w1USE4mFqrOhHC')}>Play</button> */ }
     </div>
   );
 
