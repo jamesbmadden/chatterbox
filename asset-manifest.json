@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/chatterbox/static/css/main.a3afc5dc.css",
-    "main.js": "/chatterbox/static/js/main.3ae0a279.js",
+    "main.css": "/chatterbox/static/css/main.bd20c458.css",
+    "main.js": "/chatterbox/static/js/main.331c201d.js",
     "static/js/787.c6e49690.chunk.js": "/chatterbox/static/js/787.c6e49690.chunk.js",
     "static/media/datelinepodcast.webp": "/chatterbox/static/media/datelinepodcast.806e0e59fd1204d634bf.webp",
     "static/media/the-daily-album-art-superJumbo-v2.jpeg": "/chatterbox/static/media/the-daily-album-art-superJumbo-v2.4277a977b32015d42ba2.jpeg",
@@ -13,13 +13,16 @@
     "static/media/health-podcast.webp": "/chatterbox/static/media/health-podcast.7c1140f97a83a3febde3.webp",
     "index.html": "/chatterbox/index.html",
     "static/media/pause.svg": "/chatterbox/static/media/pause.e428395769f80d2b494262fc94acbd0d.svg",
+    "static/media/exit.svg": "/chatterbox/static/media/exit.4865abf6d4550432847a64e22e648206.svg",
     "static/media/play.svg": "/chatterbox/static/media/play.98ed64bc3c12af3a1031599ba7312506.svg",
-    "main.a3afc5dc.css.map": "/chatterbox/static/css/main.a3afc5dc.css.map",
-    "main.3ae0a279.js.map": "/chatterbox/static/js/main.3ae0a279.js.map",
+    "static/media/next.svg": "/chatterbox/static/media/next.8d14d29d8a1e9b50f5eba0cd98dd80e6.svg",
+    "static/media/prev.svg": "/chatterbox/static/media/prev.30a1749b194bce6ac70130e8107dc44b.svg",
+    "main.bd20c458.css.map": "/chatterbox/static/css/main.bd20c458.css.map",
+    "main.331c201d.js.map": "/chatterbox/static/js/main.331c201d.js.map",
     "787.c6e49690.chunk.js.map": "/chatterbox/static/js/787.c6e49690.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a3afc5dc.css",
-    "static/js/main.3ae0a279.js"
+    "static/css/main.bd20c458.css",
+    "static/js/main.331c201d.js"
   ]
 }
