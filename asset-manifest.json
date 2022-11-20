@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/chatterbox/static/css/main.b10a7e60.css",
-    "main.js": "/chatterbox/static/js/main.94aa2548.js",
+    "main.js": "/chatterbox/static/js/main.4139e071.js",
     "static/js/787.c6e49690.chunk.js": "/chatterbox/static/js/787.c6e49690.chunk.js",
     "static/media/datelinepodcast.webp": "/chatterbox/static/media/datelinepodcast.806e0e59fd1204d634bf.webp",
     "static/media/the-daily-album-art-superJumbo-v2.jpeg": "/chatterbox/static/media/the-daily-album-art-superJumbo-v2.4277a977b32015d42ba2.jpeg",
@@ -18,11 +18,11 @@
     "static/media/next.svg": "/chatterbox/static/media/next.8d14d29d8a1e9b50f5eba0cd98dd80e6.svg",
     "static/media/prev.svg": "/chatterbox/static/media/prev.30a1749b194bce6ac70130e8107dc44b.svg",
     "main.b10a7e60.css.map": "/chatterbox/static/css/main.b10a7e60.css.map",
-    "main.94aa2548.js.map": "/chatterbox/static/js/main.94aa2548.js.map",
+    "main.4139e071.js.map": "/chatterbox/static/js/main.4139e071.js.map",
     "787.c6e49690.chunk.js.map": "/chatterbox/static/js/787.c6e49690.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b10a7e60.css",
-    "static/js/main.94aa2548.js"
+    "static/js/main.4139e071.js"
   ]
 }
