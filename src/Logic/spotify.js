@@ -169,6 +169,8 @@ export default class Spotify {
     });
 
     this.isPaused = false;
+
+    this.updateApp();
     
 
   }
@@ -288,8 +290,6 @@ export default class Spotify {
     this.queueIndex++;
 
     this.playTrack(this.queue[this.queueIndex].uri);
-
-    console.log(this.queue);
 
 
 
