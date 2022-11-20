@@ -102,39 +102,51 @@ function runCommand(command, spotify) {
   // all the various genre commands
   if (command.includes("chatterbox genre health")) {
     spotify.search('health');
+    return true;
   }
   if (command.includes("chatterbox genre wellness")) {
     spotify.search('wellness');
+    return true;
   }
   if (command.includes("chatterbox genre true crime")) {
     spotify.search('true crime');
+    return true;
   }
   if (command.includes("chatterbox genre news")) {
     spotify.search('news');
+    return true;
   }
   if (command.includes("chatterbox genre comedy")) {
     spotify.search('comedy');
+    return true;
   }
   if (command.includes("chatterbox genre sports")) {
     spotify.search('sports');
+    return true;
   }
   if (command.includes("chatterbox genre business")) {
     spotify.search('business');
+    return true;
   }
   if (command.includes("chatterbox genre arts")) {
     spotify.search('arts');
+    return true;
   }
   if (command.includes("chatterbox genre fitness")) {
     spotify.search('fitness');
+    return true;
   }
   if (command.includes("chatterbox genre music")) {
     spotify.search('music');
+    return true;
   }
   if (command.includes("chatterbox genre food")) {
     spotify.search('food');
+    return true;
   }
   if (command.includes("chatterbox genre culture")) {
     spotify.search('culture');
+    return true;
   }
 
 }
