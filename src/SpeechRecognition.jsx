@@ -17,14 +17,18 @@ export default function SpeechRecog({ spotify }) {
       grammarList = new window.SpeechGrammarList();
     } else if (window.webkitSpeechRecognition) {
       recognition = new window.webkitSpeechRecognition();
-      grammarList = new window.webkitSpeechGrammarList();
+      if (window.webkitSpeechGrammarList) {
+        grammarList = new window.webkitSpeechGrammarList();
+      }
     }
     else alert("no speech recognition support :(");
 
     // set the words to be recognized
     
-    grammarList.addFromString(grammar, 1);
-    recognition.grammars = grammarList;
+    if (window.SpeechGrammarList || window.webkitSpeechGrammarList) {
+      grammarList.addFromString(grammar, 1);
+      recognition.grammars = grammarList;
+    }
 
     recognition.continuous = true;
     recognition.interimResults = true;
