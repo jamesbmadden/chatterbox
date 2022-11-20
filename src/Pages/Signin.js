@@ -1,8 +1,6 @@
 
 import './Signin.css';
 
-import SpeechRecog from '../SpeechRecognition';
-
 // takes in a function to trigger the login
 function Signin({ getLoginHref }) {
   return (
