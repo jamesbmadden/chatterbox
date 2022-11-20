@@ -4,14 +4,21 @@ import './Home.css';
 import '../Logic/spotify.js';
 
 /** podcast cover imports */
-import NewsCover1 from '../Assets/PodcastExamples/the-daily-album-art-superJumbo-v2.jpeg';
-import NewsCover2 from '../Assets/PodcastExamples/podcast-template-front-burner-2022.webp';
-import ComedyCover1 from '../Assets/PodcastExamples/Smartless-1024x1024.jpeg';
-import ComedyCover2 from '../Assets/PodcastExamples/officeladiespodcast.jpeg';
-import TrueCrimeCover1 from '../Assets/PodcastExamples/datelinepodcast.webp';
-import TrueCrimeCover2 from '../Assets/PodcastExamples/crimejunkiepodcast.jpeg';
+import NewsCover from '../Assets/PodcastExamples/the-daily-album-art-superJumbo-v2.jpeg';
+import ComedyCover from '../Assets/PodcastExamples/Smartless-1024x1024.jpeg';
+import TrueCrimeCover from '../Assets/PodcastExamples/datelinepodcast.webp';
+import WellnessCover from '../Assets/PodcastExamples/wellness-podcast.webp';
+import FitnessCover from '../Assets/PodcastExamples/fitness-podcast.jpg';
+import HealthCover from '../Assets/PodcastExamples/health-podcast.webp';
+import BusinessCover from '../Assets/PodcastExamples/business-podcast.png';
+import SportsCover from '../Assets/PodcastExamples/sports-podcast.jpg';
+import ArtsCover from '../Assets/PodcastExamples/art-podcast.jpg';
+import MusicCover from '../Assets/PodcastExamples/music-podcast.png';
+import FoodCover from '../Assets/PodcastExamples/food-podcast.jpg';
+import CultureCover from '../Assets/PodcastExamples/culture-podcast.png';
 
 import MediaPlayer from '../Components/MediaPlayer';
+import GenreCard from '../Components/GenreCard';
 
 function Home({ spotify }) {
 
@@ -51,36 +58,26 @@ function Home({ spotify }) {
 
         <p>What would you like to listen to?</p>
 
-              <button onClick={() => spotify.playTrack('spotify:track:6SRsiMl7w1USE4mFqrOhHC')}>Play</button>
-              <button onClick={() => { spotify.signOut() }}>Log Out</button>
+        <button onClick={() => spotify.playTrack('spotify:track:6SRsiMl7w1USE4mFqrOhHC')}>Play</button>
+        <button onClick={() => { spotify.signOut() }}>Log Out</button>
 
-              <h3>Genres</h3>
+        <h3>Genres</h3>
 
-              <h4>True Crime</h4>
-              <img className="podcast-cover" src={ TrueCrimeCover1} alt="Podcast cover" />
-              <img className="podcast-cover" src={ TrueCrimeCover2} alt="Podcast cover"/>
-
-              <h4>News</h4>
-              <img className="podcast-cover" src={NewsCover1} alt="Podcast cover"/>
-              <img className="podcast-cover" src={ NewsCover2 } alt="Podcast cover"/>
-
-              <h4>Comedy</h4>
-              <img className="podcast-cover" src={ ComedyCover1 } alt="Podcast cover"/>
-              <img className="podcast-cover" src={ComedyCover2 } alt="Podcast cover"/>
-
-              {/* can add more to demo scrolling */}
-    {/*  
-    <h4>Sports</h4>
-              <img className="podcast-cover" src={ } />
-              <img className="podcast-cover" src={ }/>
-
-              <h4>Business</h4>
-              <img className="podcast-cover" src={ } />
-              <img className="podcast-cover" src={ }/>
-    */ }
-              
-
+        <div className='genre-grid'>
+          <GenreCard genre="Health" image={HealthCover} onClick={() => spotify.search('health')} colour="rgb(0, 111, 154)" transparent="rgba(0, 111, 154, 0.2)"></GenreCard>
+          <GenreCard genre="Wellness" image={WellnessCover} onClick={() => spotify.search('health')} colour="rgb(244, 186, 24)" transparent="rgba(244, 186, 24, 0.2)"></GenreCard>
+          <GenreCard genre="True Crime" image={TrueCrimeCover} onClick={() => spotify.search('true crime')} colour="rgb(15, 34, 43)" transparent="rgba(15, 34, 43, 0.2)"></GenreCard>
+          <GenreCard genre="News" image={NewsCover} onClick={() => spotify.search('news')} colour="rgb(120, 175, 100)" transparent="rgba(120, 175, 100, 0.2)"></GenreCard>
+          <GenreCard genre="Comedy" image={ComedyCover} onClick={() => spotify.search('comedy')} colour="rgb(241, 21, 47)" transparent="rgba(241, 21, 47, 0.2)"></GenreCard>
+          <GenreCard genre="Sports" image={SportsCover} onClick={() => spotify.search('sports')} colour="rgb(25, 25, 25)" transparent="rgba(25, 25, 25, 0.2)"></GenreCard>
+          <GenreCard genre="Business" image={BusinessCover} onClick={() => spotify.search('business')} colour="rgb(7, 45, 6)" transparent="rgba(7, 45, 6, 0.2)"></GenreCard>
+          <GenreCard genre="Arts" image={ArtsCover} onClick={() => spotify.search('arts')} colour="rgb(187, 95, 120)" transparent="rgba(187, 95, 120, 0.2)"></GenreCard>
+          <GenreCard genre="Fitness" image={FitnessCover} onClick={() => spotify.search('fitness')} colour="rgb(4, 114, 202)" transparent="rgba(4, 114, 202, 0.2)"></GenreCard>
+          <GenreCard genre="Music" image={MusicCover} onClick={() => spotify.search('music')} colour="rgb(254, 81, 39)" transparent="rgba(254, 81, 39, 0.2)"></GenreCard>
+          <GenreCard genre="Food" image={FoodCover} onClick={() => spotify.search('food')} colour="rgb(91, 190, 99)" transparent="rgba(91, 190, 99, 0.2)"></GenreCard>
+          <GenreCard genre="Culture" image={CultureCover} onClick={() => spotify.search('culture')} colour="rgb(0, 17, 37)" transparent="rgba(0, 17, 37, 0.2)"></GenreCard>
         </div>
+      </div>
       <MediaPlayer spotify={spotify}></MediaPlayer>
     </div>
   );

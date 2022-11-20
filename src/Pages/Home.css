@@ -41,3 +41,12 @@
     height: 150px;
     margin: 10px;
 }
+
+.genre-grid {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+}
