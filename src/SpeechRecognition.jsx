@@ -34,7 +34,7 @@ export default function SpeechRecog({ spotify }) {
     recognition.interimResults = true;
 
     recognition.start();
-    console.log('Ready to receive a color command.');
+    console.log('Ready to receive a command');
 
     let resultIndex = 0;
 
