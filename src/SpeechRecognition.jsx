@@ -99,5 +99,12 @@ function runCommand(command, spotify) {
     spotify.prevTrack();
     return true;
   }
+  // all the various genre commands
+  if (command.includes("chatterbox genre health")) {
+    spotify.search('health');
+  }
+  if (command.includes("chatterbox genre wellness")) {
+    spotify.search('wellness');
+  }
 
 }
