@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 
-import logo from './logo.svg';
 import './App.css';
 
 import Spotify from './Logic/spotify';
 import Signin from './Pages/Signin.js';
 import Home from './Pages/Home.js';
-
-import SpeechRecog from './SpeechRecognition';
 
 const spotify = new Spotify();
 
