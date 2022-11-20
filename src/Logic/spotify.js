@@ -8,6 +8,10 @@ export default class Spotify {
   // properties for us to play with
   accessToken = '';
 
+  // queue of things to play
+  queue = [];
+  queueIndex = -1;
+
   // trigger a refresh in the app component
   updateApp = () => {};
 
@@ -276,24 +280,32 @@ export default class Spotify {
       orderedEpisodes.push(episodes[i]);
 
       // remove it from the original
-      episodes.splice(i);
+      episodes.splice(i, 1);
 
     }
 
-    // play the first one
-    console.log(orderedEpisodes[0].uri);
-    this.playTrack(orderedEpisodes.shift().uri);
+    this.queue = this.queue.slice(0, this.queueIndex + 1).concat(orderedEpisodes);
+    this.queueIndex++;
 
-    let i = 0;
-    const loop = setInterval(async () => {
-      const headers = this.genAuthHeaders();
-      await fetch(`https://api.spotify.com/v1/me/player/queue?uri=${encodeURIComponent(orderedEpisodes[i].uri)}`, { headers, method: 'POST' });
+    this.playTrack(this.queue[this.queueIndex].uri);
 
-      i++;
-      if (i == orderedEpisodes.length) clearInterval(loop);
-    }, 1000);
+    console.log(this.queue);
 
 
+
+  }
+
+  nextTrack () {
+
+    this.queueIndex++;
+    this.playTrack(this.queue[this.queueIndex].uri);
+
+  }
+
+  prevTrack () {
+    
+    this.queueIndex--;
+    this.playTrack(this.queue[this.queueIndex].uri);
 
   }
 
