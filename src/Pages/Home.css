@@ -45,6 +45,8 @@
 .genre-grid {
   box-sizing: border-box;
   width: 100%;
+  max-width: 720px;
+  margin: auto;
   padding: 8px;
   display: grid;
   grid-template-columns: 1fr 1fr;
