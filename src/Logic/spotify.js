@@ -250,6 +250,18 @@ export default class Spotify {
 
     console.log(results);
 
+    // play one!
+    const podcast = results.episodes.items[Math.floor(Math.random() * 50)];
+
+    this.playTrack(podcast.uri);
+
+  }
+
+  /**
+   * use the results of a search to generate a queue
+   */
+  async generateQueue (episodes) {
+    
   }
 
 }
