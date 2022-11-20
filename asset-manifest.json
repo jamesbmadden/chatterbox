@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/codejam12/static/css/main.a3afc5dc.css",
-    "main.js": "/codejam12/static/js/main.1fad7d70.js",
-    "static/js/787.e743018e.chunk.js": "/codejam12/static/js/787.e743018e.chunk.js",
-    "static/media/datelinepodcast.webp": "/codejam12/static/media/datelinepodcast.806e0e59fd1204d634bf.webp",
-    "static/media/the-daily-album-art-superJumbo-v2.jpeg": "/codejam12/static/media/the-daily-album-art-superJumbo-v2.4277a977b32015d42ba2.jpeg",
-    "static/media/Smartless-1024x1024.jpeg": "/codejam12/static/media/Smartless-1024x1024.b8fa9b6e68c591ed5453.jpeg",
-    "static/media/fitness-podcast.jpg": "/codejam12/static/media/fitness-podcast.cd17ad53cdaa70923135.jpg",
-    "static/media/art-podcast.jpg": "/codejam12/static/media/art-podcast.567094038735c1f8338a.jpg",
-    "static/media/wellness-podcast.webp": "/codejam12/static/media/wellness-podcast.8da6242b01ed5ecb20d3.webp",
-    "static/media/business-podcast.png": "/codejam12/static/media/business-podcast.c2b8c0fc1121319e4074.png",
-    "static/media/health-podcast.webp": "/codejam12/static/media/health-podcast.7c1140f97a83a3febde3.webp",
-    "index.html": "/codejam12/index.html",
-    "static/media/pause.svg": "/codejam12/static/media/pause.e428395769f80d2b494262fc94acbd0d.svg",
-    "static/media/play.svg": "/codejam12/static/media/play.98ed64bc3c12af3a1031599ba7312506.svg",
-    "main.a3afc5dc.css.map": "/codejam12/static/css/main.a3afc5dc.css.map",
-    "main.1fad7d70.js.map": "/codejam12/static/js/main.1fad7d70.js.map",
-    "787.e743018e.chunk.js.map": "/codejam12/static/js/787.e743018e.chunk.js.map"
+    "main.css": "/chatterbox/static/css/main.a3afc5dc.css",
+    "main.js": "/chatterbox/static/js/main.6d82c880.js",
+    "static/js/787.c6e49690.chunk.js": "/chatterbox/static/js/787.c6e49690.chunk.js",
+    "static/media/datelinepodcast.webp": "/chatterbox/static/media/datelinepodcast.806e0e59fd1204d634bf.webp",
+    "static/media/the-daily-album-art-superJumbo-v2.jpeg": "/chatterbox/static/media/the-daily-album-art-superJumbo-v2.4277a977b32015d42ba2.jpeg",
+    "static/media/Smartless-1024x1024.jpeg": "/chatterbox/static/media/Smartless-1024x1024.b8fa9b6e68c591ed5453.jpeg",
+    "static/media/fitness-podcast.jpg": "/chatterbox/static/media/fitness-podcast.cd17ad53cdaa70923135.jpg",
+    "static/media/art-podcast.jpg": "/chatterbox/static/media/art-podcast.567094038735c1f8338a.jpg",
+    "static/media/wellness-podcast.webp": "/chatterbox/static/media/wellness-podcast.8da6242b01ed5ecb20d3.webp",
+    "static/media/business-podcast.png": "/chatterbox/static/media/business-podcast.c2b8c0fc1121319e4074.png",
+    "static/media/health-podcast.webp": "/chatterbox/static/media/health-podcast.7c1140f97a83a3febde3.webp",
+    "index.html": "/chatterbox/index.html",
+    "static/media/pause.svg": "/chatterbox/static/media/pause.e428395769f80d2b494262fc94acbd0d.svg",
+    "static/media/play.svg": "/chatterbox/static/media/play.98ed64bc3c12af3a1031599ba7312506.svg",
+    "main.a3afc5dc.css.map": "/chatterbox/static/css/main.a3afc5dc.css.map",
+    "main.6d82c880.js.map": "/chatterbox/static/js/main.6d82c880.js.map",
+    "787.c6e49690.chunk.js.map": "/chatterbox/static/js/787.c6e49690.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a3afc5dc.css",
-    "static/js/main.1fad7d70.js"
+    "static/js/main.6d82c880.js"
   ]
 }
