@@ -56,7 +56,7 @@ export default class Spotify {
   
     const scope = encodeURIComponent('user-read-private user-read-email user-read-playback-state streaming');
     // send the user to the spotify page
-    return `https://accounts.spotify.com/authorize?response_type=token&client_id=${Spotify.clientID}&scope=${scope}&redirect_uri=http%3A%2F%2Flocalhost%3A3000`;
+    return `https://accounts.spotify.com/authorize?response_type=token&client_id=${Spotify.clientID}&scope=${scope}&redirect_uri=${encodeURIComponent(window.location.toString())}`;
 
   }
 
