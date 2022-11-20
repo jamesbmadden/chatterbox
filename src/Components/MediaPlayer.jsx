@@ -2,6 +2,8 @@ import './MediaPlayer.css';
 
 import PlayIcon from '../Assets/Icons/play.svg';
 import PauseIcon from '../Assets/Icons/pause.svg';
+import NextIcon from '../Assets/Icons/next.svg';
+import PrevIcon from '../Assets/Icons/prev.svg';
 
 import SpeechRecog from '../SpeechRecognition';
 
@@ -32,7 +34,9 @@ export default function MediaPlayer ({ spotify }) {
         <h2>{spotify.nowPlaying.artist}</h2>
       </main>
       <div className='mediaplayer-large--controls'>
-        <img className='mediaplayer-large--playpause' onClick={() => spotify.togglePlayback() } src={spotify.isPaused ? PlayIcon : PauseIcon}></img>
+        <img className={'mediaplayer-large--control ' + (spotify.queueIndex > 0 ? '' : 'hidden')} onClick={() => spotify.prevTrack() } src={PrevIcon}></img>
+        <img className='mediaplayer-large--playpause mediaplayer-large--control' onClick={() => spotify.togglePlayback() } src={spotify.isPaused ? PlayIcon : PauseIcon}></img>
+        <img className='mediaplayer-large--control' onClick={() => spotify.nextTrack() } src={NextIcon}></img>
       </div>
     </div>
   );

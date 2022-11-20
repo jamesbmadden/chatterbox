@@ -117,3 +117,7 @@
 .mediaplayer-large--control {
   height: 100%;
 }
+
+.mediaplayer-large--control.hidden {
+  visibility: hidden;
+}
