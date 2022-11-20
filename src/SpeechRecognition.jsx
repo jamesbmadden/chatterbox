@@ -5,8 +5,6 @@ const grammar = '#JSGF V1.0; grammar commands; public <command> = chatterbox | p
 
 export default function SpeechRecog({ spotify }) {
 
-  const [ words, setWords ] = useState("");
-
   // only add listeners once per component
   useEffect(() => {
 
