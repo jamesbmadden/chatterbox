@@ -65,3 +65,18 @@
   justify-content: right;
   align-items: center;
 }
+
+.Home h2 {
+  text-align: left;
+  box-sizing: border-box;
+  padding: 0 8px;
+  margin-bottom: 4px;
+  font-size: 1.75rem;
+}
+.Home h3 {
+  
+  text-align: left;
+  box-sizing: border-box;
+  padding: 0 8px;
+  font-size: 1.1rem;
+}

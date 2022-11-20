@@ -53,12 +53,9 @@ function Home({ spotify }) {
             <p>{spotify.userData.name}</p>
         </div>
 
-          <h2>Hello, { spotify.userData.name }</h2>
-          
+        <h2>Hello, { spotify.userData.name }</h2>
 
-        <p>What would you like to listen to?</p>
-
-        <h3>Genres</h3>
+        <h3>What would you like to listen to?</h3>
 
         <div className='genre-grid'>
           <GenreCard genre="Health" image={HealthCover} onClick={() => spotify.search('health')} colour="rgb(0, 111, 154)" transparent="rgba(0, 111, 154, 0.2)"></GenreCard>
