@@ -43,6 +43,7 @@ export default class Spotify {
       this.getUserData();
       // and initialize the spotify sdk
       this.initSpotifySdk();
+
     } else this.loggedIn = false;
 
   }
@@ -233,6 +234,21 @@ export default class Spotify {
     this.spotifyPlayer.pause();
 
     this.updateApp();
+
+  }
+
+  /**
+   * Search for podcasts
+   */
+  async search (query) {
+
+    const headers = this.genAuthHeaders();
+
+    const response = await fetch(`https://api.spotify.com/v1/search?type=episode&q=${encodeURIComponent(query)}&limit=50`, { headers });
+    
+    const results = await response.json();
+
+    console.log(results);
 
   }
 
