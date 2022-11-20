@@ -44,9 +44,6 @@ function Home({ spotify }) {
   return (
     <div className='Home-wrapper' ref={wrapperRef}>
       <div className="Home">
-          <header className="Home-header">
-              
-          </header>
           
         <div className="user-info">
             <img className="profile-photo" src={spotify.userData.image} alt="User's profile photo"/>

@@ -53,3 +53,10 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 8px;
 }
+
+.user-info {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: right;
+  align-items: center;
+}
