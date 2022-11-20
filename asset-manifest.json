@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/chatterbox/static/css/main.bd20c458.css",
+    "main.css": "/chatterbox/static/css/main.ecb693b1.css",
     "main.js": "/chatterbox/static/js/main.331c201d.js",
     "static/js/787.c6e49690.chunk.js": "/chatterbox/static/js/787.c6e49690.chunk.js",
     "static/media/datelinepodcast.webp": "/chatterbox/static/media/datelinepodcast.806e0e59fd1204d634bf.webp",
@@ -17,12 +17,12 @@
     "static/media/play.svg": "/chatterbox/static/media/play.98ed64bc3c12af3a1031599ba7312506.svg",
     "static/media/next.svg": "/chatterbox/static/media/next.8d14d29d8a1e9b50f5eba0cd98dd80e6.svg",
     "static/media/prev.svg": "/chatterbox/static/media/prev.30a1749b194bce6ac70130e8107dc44b.svg",
-    "main.bd20c458.css.map": "/chatterbox/static/css/main.bd20c458.css.map",
+    "main.ecb693b1.css.map": "/chatterbox/static/css/main.ecb693b1.css.map",
     "main.331c201d.js.map": "/chatterbox/static/js/main.331c201d.js.map",
     "787.c6e49690.chunk.js.map": "/chatterbox/static/js/787.c6e49690.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bd20c458.css",
+    "static/css/main.ecb693b1.css",
     "static/js/main.331c201d.js"
   ]
 }
