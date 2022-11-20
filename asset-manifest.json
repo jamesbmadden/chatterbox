@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/codejam/static/css/main.8051a98e.css",
-    "main.js": "/codejam/static/js/main.40fcfb63.js",
-    "static/js/787.e743018e.chunk.js": "/codejam/static/js/787.e743018e.chunk.js",
-    "static/media/datelinepodcast.webp": "/codejam/static/media/datelinepodcast.806e0e59fd1204d634bf.webp",
-    "static/media/the-daily-album-art-superJumbo-v2.jpeg": "/codejam/static/media/the-daily-album-art-superJumbo-v2.4277a977b32015d42ba2.jpeg",
-    "static/media/Smartless-1024x1024.jpeg": "/codejam/static/media/Smartless-1024x1024.b8fa9b6e68c591ed5453.jpeg",
-    "static/media/officeladiespodcast.jpeg": "/codejam/static/media/officeladiespodcast.ecff94b34ddf8e083ca4.jpeg",
-    "static/media/crimejunkiepodcast.jpeg": "/codejam/static/media/crimejunkiepodcast.bd98a3fff4c5c0a8c4ee.jpeg",
-    "static/media/podcast-template-front-burner-2022.webp": "/codejam/static/media/podcast-template-front-burner-2022.32f48ec622c296b0e3a1.webp",
-    "static/media/logo.svg": "/codejam/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/codejam/index.html",
-    "static/media/pause.svg": "/codejam/static/media/pause.e428395769f80d2b494262fc94acbd0d.svg",
-    "static/media/play.svg": "/codejam/static/media/play.98ed64bc3c12af3a1031599ba7312506.svg",
-    "main.8051a98e.css.map": "/codejam/static/css/main.8051a98e.css.map",
-    "main.40fcfb63.js.map": "/codejam/static/js/main.40fcfb63.js.map",
-    "787.e743018e.chunk.js.map": "/codejam/static/js/787.e743018e.chunk.js.map"
+    "main.css": "/static/css/main.a3afc5dc.css",
+    "main.js": "/static/js/main.119dcb92.js",
+    "static/js/787.e743018e.chunk.js": "/static/js/787.e743018e.chunk.js",
+    "static/media/datelinepodcast.webp": "/static/media/datelinepodcast.806e0e59fd1204d634bf.webp",
+    "static/media/the-daily-album-art-superJumbo-v2.jpeg": "/static/media/the-daily-album-art-superJumbo-v2.4277a977b32015d42ba2.jpeg",
+    "static/media/Smartless-1024x1024.jpeg": "/static/media/Smartless-1024x1024.b8fa9b6e68c591ed5453.jpeg",
+    "static/media/fitness-podcast.jpg": "/static/media/fitness-podcast.cd17ad53cdaa70923135.jpg",
+    "static/media/art-podcast.jpg": "/static/media/art-podcast.567094038735c1f8338a.jpg",
+    "static/media/wellness-podcast.webp": "/static/media/wellness-podcast.8da6242b01ed5ecb20d3.webp",
+    "static/media/business-podcast.png": "/static/media/business-podcast.c2b8c0fc1121319e4074.png",
+    "static/media/health-podcast.webp": "/static/media/health-podcast.7c1140f97a83a3febde3.webp",
+    "index.html": "/index.html",
+    "static/media/pause.svg": "/static/media/pause.e428395769f80d2b494262fc94acbd0d.svg",
+    "static/media/play.svg": "/static/media/play.98ed64bc3c12af3a1031599ba7312506.svg",
+    "main.a3afc5dc.css.map": "/static/css/main.a3afc5dc.css.map",
+    "main.119dcb92.js.map": "/static/js/main.119dcb92.js.map",
+    "787.e743018e.chunk.js.map": "/static/js/787.e743018e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8051a98e.css",
-    "static/js/main.40fcfb63.js"
+    "static/css/main.a3afc5dc.css",
+    "static/js/main.119dcb92.js"
   ]
 }
