@@ -34,13 +34,15 @@ export default function SpeechRecog({ spotify }) {
 
     let resultIndex = 0;
 
+    let endForGood = false;
+
     recognition.onresult = (event) => {
       const command = event.results[resultIndex][0].transcript.replace('.', '');
 
 
       if (command.toLowerCase().includes('chatterbox')) {
         // pause the playback!
-        spotify.pause();
+        //spotify.pause();
         runCommand(command.toLowerCase(), spotify);
 
       }
@@ -48,7 +50,15 @@ export default function SpeechRecog({ spotify }) {
       if (event.results[resultIndex].isFinal) resultIndex++;
     }
 
+    recognition.onend = () => {
+      if (!endForGood) {
+        recognition.start();
+        resultIndex = 0;
+      }
+    }
+
     return () => {
+      endForGood = true;
       recognition.stop();
     }
 
