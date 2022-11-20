@@ -106,5 +106,35 @@ function runCommand(command, spotify) {
   if (command.includes("chatterbox genre wellness")) {
     spotify.search('wellness');
   }
+  if (command.includes("chatterbox genre true crime")) {
+    spotify.search('true crime');
+  }
+  if (command.includes("chatterbox genre news")) {
+    spotify.search('news');
+  }
+  if (command.includes("chatterbox genre comedy")) {
+    spotify.search('comedy');
+  }
+  if (command.includes("chatterbox genre sports")) {
+    spotify.search('sports');
+  }
+  if (command.includes("chatterbox genre business")) {
+    spotify.search('business');
+  }
+  if (command.includes("chatterbox genre arts")) {
+    spotify.search('arts');
+  }
+  if (command.includes("chatterbox genre fitness")) {
+    spotify.search('fitness');
+  }
+  if (command.includes("chatterbox genre music")) {
+    spotify.search('music');
+  }
+  if (command.includes("chatterbox genre food")) {
+    spotify.search('food');
+  }
+  if (command.includes("chatterbox genre culture")) {
+    spotify.search('culture');
+  }
 
 }
